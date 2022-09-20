@@ -1,0 +1,20 @@
+.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(255, 6, 151);
+  list-style-type: none;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid black;
+  font-size: 200%;
+  color: black;
+}
+.black{
+    color: black;
+    cursor: pointer;
+}
+.black:hover{
+    color: #f1f1f1;
+}
+

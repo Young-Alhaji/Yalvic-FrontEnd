@@ -1,0 +1,29 @@
+.body{
+    color: antiquewhite;
+}
+.mainp{
+    font-size: 150%;
+    margin-top: -20px;
+    color: antiquewhite;
+}
+.p{
+    color: rgb(192, 2, 135);
+}
+.label{
+    font-size: 130%;
+}
+.cover{
+    border: 2px solid rgb(192, 2, 135);
+    width: 50%;
+    border-radius: 10px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .cover{
+        border: 2px solid rgb(192, 2, 135);
+        width: 70%;
+        border-radius: 10px;
+    }
+}

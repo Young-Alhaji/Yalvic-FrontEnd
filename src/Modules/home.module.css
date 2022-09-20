@@ -1,0 +1,97 @@
+.body{
+    color: antiquewhite;
+    margin-top: -45px;
+}
+.mainbox{
+    background-color: rgb(192, 2, 135);
+    border: 2px solid rgb(192, 2, 135);
+    height: auto;
+    width: 45%;
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+.display{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.firstside{
+    width: 50%;
+    text-align: left;
+}
+.secondside{
+    width: 50%;
+    text-align: right;
+}
+.button1{
+    color: rgb(192, 2, 135);
+    border: 1px solid rgb(192, 2, 135);
+    background-color: black;
+    border-radius: 6px;
+    width: 56%;
+    padding: 2px;
+    
+}
+.amount{
+    font-size: 180%;
+}
+.favorite{
+    color: rgb(192, 2, 135);
+    font-size: 110%;
+    font-weight: bold;
+}
+.seconddiv{
+    margin-top: 100px;
+}
+.bigbutton{
+    height: 120px;
+    color: antiquewhite;
+    background-color: #080710;
+    border: none;
+    font-weight: bold;
+    margin-left: 7%;
+}
+.bigbutton:hover{
+    color: rgb(192, 2, 135);
+}
+.hi{
+    font-weight: bold;
+    font-size: 140%;
+}
+
+
+
+@media screen and (max-width: 1140px) {
+    .mainbox{
+        background-color: rgb(192, 2, 135);
+        border: 2px solid rgb(192, 2, 135);
+        height: auto;
+        width: 95%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .seconddiv{
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .button1{
+        color: rgb(192, 2, 135);
+        border: 1px solid rgb(192, 2, 135);
+        background-color: black;
+        border-radius: 6px;
+        width: 60%;
+        padding: 1px;
+        
+    }
+    .bigbutton{
+        height: 120px;
+        color: antiquewhite;
+        background-color: #080710;
+        border: none;
+        font-weight: bold;
+        margin-left: 2%;
+    }
+}

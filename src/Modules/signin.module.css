@@ -1,0 +1,149 @@
+.body {
+  background-color: black;
+  font-family: sans-serif;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
+.form {
+  height: auto;
+  width: 400px;
+  background-color: rgb(255, 6, 151);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(238, 236, 250, 0.6);
+  padding: 50px 35px;
+}
+.form {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+.input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bolder;
+  color: black;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.input::placeholder {
+  color: #e5e5e5;
+}
+.button {
+  width: 100%;
+  background-color: black;
+  color: #ffffff;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.social {
+  margin-top: 30px;
+  display: flex;
+}
+.social div {
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47);
+}
+.social .fb {
+  margin-left: 25px;
+}
+.social i {
+  margin-right: 4px;
+  color: deepskyblue;
+  font-size: 160%;
+}
+.a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.a:hover {
+  color: deepskyblue;
+}
+.text {
+  color: deepskyblue;
+  font-size: 90%;
+  font-family: sans-serif;
+}
+.center {
+  text-align: center;
+}
+.logo {
+  width: 28px;
+  height: 35px;
+}
+.h1 {
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 180%;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: -2px;
+}
+.h3 {
+  font-size: 150%;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  line-height: 42px;
+}
+.whitecolor {
+  color: white;
+}
+.requiredtext {
+  color: red;
+  background-color: black;
+  font-weight: bolder;
+  font-size: 90%;
+  border-radius: 5px;
+  padding: 0% 10%;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .form {
+    height: auto;
+    width: 325px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(238, 236, 250, 0.6);
+    padding: 50px 35px;
+  }
+}

@@ -1,0 +1,143 @@
+.sidenav {
+    height: 100%;
+    width: 310px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .sidenav a {
+    padding: 8px 8px 18px 32px;
+    text-decoration: none;
+    font-size: 140%;
+    color: rgb(255, 6, 151);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #f1f1f1;
+    cursor: pointer;
+  }
+  .navicon{
+    font-size:50px;
+    cursor:pointer;
+    margin-left: -40px;
+    color: white;
+    margin-top: -10px;
+  }
+  .navicon:hover{
+    color: rgb(255, 6, 151);
+  }
+  .display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 15px;
+    margin-bottom: -7px;
+    background-color: black;
+}
+.search{
+  width: 70%;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.search::placeholder{
+  color: black;
+  font-size: 130%;
+}
+.searchbutton{
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255, 6, 151);
+  border: 1px solid rgb(255, 6, 151);
+  border-radius: 8px;
+}
+.logo {
+  width: 28px;
+  height: 35px;
+}
+.h1 {
+  color: rgb(255, 6, 151);
+  font-size: 200%;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: -2px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1140px) {
+    .sidenav {
+        height: 100%;
+        width: 0;
+      }
+}
+
+  @media screen and (max-width: 640px) {
+    .navicon{
+    font-size:40px;
+    margin-left: 10px;
+  }
+  .sidenav a {
+    padding: 8px 8px 18px 32px;
+    font-size: 120%;
+    
+  }
+  .search{
+    width: 50%;
+    height: 40px;
+  }
+  .searchbutton{
+    height: 40px;
+    width: 50px;
+    border: 1px solid rgb(255, 6, 151);
+    background-color: rgb(255, 6, 151);
+    border-radius: 8px;
+  }
+  .logo {
+    width: 28px;
+    height: 35px;
+  }
+  .h1 {
+    color: rgb(255, 6, 151);
+    font-size: 160%;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: -2px;
+  }
+  .box1{
+    width: 20%;
+  }
+  .box2{
+    width: 40%;
+  }
+  .addmargin{
+    padding-right: 10px;
+  }
+  .display{
+    padding-top: 15px;
+    margin-bottom: 0px;
+}
+}

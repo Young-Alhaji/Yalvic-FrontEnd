@@ -1,0 +1,33 @@
+.bgvideo {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -100;
+}
+.first{
+    font-size: 300%;
+    color: navajowhite;
+}
+.second{
+    font-size: 200%;
+    color: red;
+}
+
+
+@media screen and (max-width: 840px) {
+    .first{
+        font-size: 200%;
+        color: navajowhite;
+    }
+    .second{
+        margin-top: 40px;
+        font-size: 120%;
+        color: black;
+        font-weight: bold;
+    }
+}

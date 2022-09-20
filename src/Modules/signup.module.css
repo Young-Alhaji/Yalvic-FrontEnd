@@ -1,0 +1,163 @@
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+.body {
+  background-color: #080710;
+  font-family: sans-serif;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  margin-bottom: 20px;
+}
+.form {
+  margin: auto;
+  background-size: 150% 100%;
+  margin-top: 15px;
+  height: auto;
+  width: 40%;
+  background-color: rgb(255, 6, 151);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(238, 236, 250, 0.6);
+  padding: 50px 35px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.form h3 {
+  font-size: 150%;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+}
+.input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bolder;
+  color: black;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid black;
+}
+.input::placeholder {
+  color: white;
+}
+.button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: black;
+  color: #ffffff;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bolder;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.social {
+  margin-top: 30px;
+  display: flex;
+}
+.social div {
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50px;
+}
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47);
+}
+.social .fb {
+  margin-left: 25px;
+}
+.social i {
+  margin-right: 4px;
+  color: deepskyblue;
+  font-size: 140%;
+}
+.a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+.text {
+  color: black;
+  font-size: 90%;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.requiredtext {
+  color: red;
+  background-color: black;
+  font-weight: bolder;
+  font-size: 90%;
+  border-radius: 5px;
+  padding: 0% 10%;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+.center {
+  text-align: center;
+}
+.h5 {
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+}
+.h1 {
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 180%;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: -2px;
+}
+.a:hover {
+  color: deepskyblue;
+}
+.logo {
+  width: 28px;
+  height: 35px;
+}
+.whitecolor {
+  color: white;
+}
+
+@media screen and (max-width: 1150px) {
+  .form {
+    margin: auto;
+    height: auto;
+    margin-top: 50px;
+    background-size: 250% 100%;
+    width: 95%;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    padding: 50px 35px;
+    font-weight: bold;
+  }
+}
