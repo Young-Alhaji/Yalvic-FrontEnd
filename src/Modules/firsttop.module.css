@@ -17,4 +17,10 @@
 .black:hover{
     color: #f1f1f1;
 }
+.display a{
+  color: black;
+}
+.display a:hover{
+  color: #f1f1f1;
+}
 

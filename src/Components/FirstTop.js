@@ -3,9 +3,6 @@ import styles from "../Modules/firsttop.module.css";
 import { Link } from "react-router-dom";
 
 const FirstTop = ({viewcolor,homecolor}) => {
-  const linkcolor={
-    color:'black'
-  }
   function opentab() {
     document.getElementById("mySidenav").style.width = "280px";
   }
@@ -16,12 +13,12 @@ const FirstTop = ({viewcolor,homecolor}) => {
           &#9776;
         </span>
         <span>
-          <Link to="/home" style={linkcolor} className={homecolor}>
+          <Link to="/home" className={homecolor}>
             <i class="fa-solid fa-house"></i>
           </Link>
         </span>
         <span>
-          <Link to="/viewlist" style={linkcolor} className={viewcolor}>
+          <Link to="/viewlist" className={viewcolor}>
             <i class="fa-solid fa-eye"></i>
           </Link>
         </span>

@@ -9,7 +9,7 @@ import axios from "axios";
 
 const SignUp = () => {
   const [message, setmessage] = useState("");
-  const [loading, setloading] = useState(true);
+  const [loading, setloading] = useState(false);
   let navigate = useNavigate();
   let endpoint = "";
   let endpoint2 = "";
@@ -21,7 +21,7 @@ const SignUp = () => {
       password: "",
     },
     onSubmit: (values) => {
-      // console.log(values);
+      // setloading(true);
       // axios
       //   .post(endpoint, values)
       //   .then((res) => {

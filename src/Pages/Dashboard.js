@@ -1,17 +1,19 @@
-import React from 'react'
-import FirstTop from '../Components/FirstTop'
-import ThirdTop from '../Components/ThirdTop'
+import React from "react";
+import FirstTop from "../Components/FirstTop";
+import Navbar from "../Components/Navbar";
+import SecondTop from "../Components/SecondTop";
+import ThirdTop from "../Components/ThirdTop";
 
 const Dashboard = () => {
   return (
     <>
-    <div>
-      <FirstTop/>
-        <ThirdTop/>
-        
-    </div>
+      <div>
+        <Navbar />
+        <SecondTop/>
+        <ThirdTop />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

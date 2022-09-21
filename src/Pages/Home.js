@@ -12,11 +12,10 @@ const Home = () => {
  let navigate= useNavigate()
 
   return (
-    <>    
-      <center>
+    <>   
+    <Navbar/>
       <FirstTop homecolor='text-white'/>
       <ThirdTop />
-      </center>
     </>
   )
 }

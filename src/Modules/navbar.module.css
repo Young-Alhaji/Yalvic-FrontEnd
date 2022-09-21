@@ -1,6 +1,6 @@
 .sidenav {
     height: 100%;
-    width: 310px;
+    width: 280px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -88,7 +88,7 @@
 
 
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1240px) {
     .sidenav {
         height: 100%;
         width: 0;

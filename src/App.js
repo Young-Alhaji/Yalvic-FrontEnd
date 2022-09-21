@@ -16,7 +16,6 @@ function App() {
   return (
     
     <>
-    <Navbar/>
       <Routes>
         <Route path="/" element={<SignUp />}/>
         <Route path="/profile" element={<Profile />}/>
@@ -29,12 +28,6 @@ function App() {
         <Route path="/viewlist" element= {<Viewlist/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
-      {/* <SignUp/> */}
-      {/* <SignIn/> */}
-      
-      {/* <Home/> */}
-      {/* <Profile/> */}
-
     </>
   );
 }

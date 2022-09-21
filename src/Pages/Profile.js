@@ -2,13 +2,17 @@ import React from 'react'
 import { useState } from "react";
 import Navbar from '../Components/Navbar';
 import styles from '../Modules/profile.module.css';
+import FirstTop from '../Components/FirstTop'
+import ThirdTop from '../Components/ThirdTop'
+import SecondTop from '../Components/SecondTop';
 
 const Profile = () => {
-    let allUsers=JSON.parse(localStorage.allOfUsers)
- let i=JSON.parse(localStorage.indexes)
+    
   return (
     <>      
      <Navbar/>
+        <SecondTop/>
+        <ThirdTop />
         <center>
         <div className={styles.body}>
             <p className={styles.mainp}>
@@ -16,19 +20,19 @@ const Profile = () => {
             </p>
             <div className={styles.cover}>
                 <label  className={styles.label}>First Name:</label>
-                <p className={styles.p} >{allUsers[i].firstname}</p>
+                <p className={styles.p} >{}</p>
             </div> <br />
             <div className={styles.cover}>
                 <label className={styles.label}>Last Name:</label>
-                <p className={styles.p} >{allUsers[i].lastname}</p>
+                <p className={styles.p} >{}</p>
             </div> <br />
             <div className={styles.cover}>
                 <label className={styles.label}>Email:</label>
-                <p className={styles.p} >{allUsers[i].email}</p>
+                <p className={styles.p} >{}</p>
             </div> <br />
             <div className={styles.cover}>
                 <label className={styles.label}>Balance:</label>
-                <p className={styles.p} >#{allUsers[i].balance}</p>
+                <p className={styles.p} >#{}</p>
             </div> <br />
             <div className={styles.cover}>
                 <label className={styles.label}>Transfer Pin:</label>
@@ -36,7 +40,7 @@ const Profile = () => {
             </div> <br />
             <div className={styles.cover}>
                 <label className={styles.label}>Account No:</label>
-                <p className={styles.p} >{allUsers[i].AN}</p>
+                <p className={styles.p} >{}</p>
             </div>
             
         </div>

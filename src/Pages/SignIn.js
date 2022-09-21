@@ -8,7 +8,7 @@ import axios from 'axios';
 const SignIn = ({allUsers}) => {
   let navigate= useNavigate()
   let endpoint=''
-  const [loading, setloading] = useState(true)
+  const [loading, setloading] = useState(false)
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
   const [message, setmessage] = useState('')
@@ -16,6 +16,7 @@ const SignIn = ({allUsers}) => {
   
 
   const signin=()=>{
+    // setloading(true);
   //   let user = {email,password}
   //  axios.post(endpoint,user).then((res)=>{
   //   setloading(false)

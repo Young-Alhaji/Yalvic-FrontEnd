@@ -71,7 +71,7 @@ const Navbar = ({ homecolor }) => {
               class="fa-solid fa-right-from-bracket"
               style={{ marginRight: "15px", fontSize: "120%" }}
             ></i>
-            <span style={{ marginLeft: "-2px" }}> Log Out </span>
+            <span style={{ marginLeft: "-2px" }}> Log Out</span>
           </Link>
         </div>
         <div className={styles.display}>
