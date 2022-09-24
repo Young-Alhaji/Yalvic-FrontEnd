@@ -83,7 +83,7 @@ const Navbar = ({ homecolor }) => {
             <Link to="/home">
               <h1 className={styles.h1}>
                 <img className={styles.logo} src="logo.png" alt="page logo" />
-                Yalvic
+                YalVic
               </h1>
             </Link>
           </span>

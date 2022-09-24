@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import styles from '../Modules/signin.module.css';
 import { useNavigate } from "react-router"
 import axios from 'axios';
-
-const SignIn = ({allUsers}) => {
+// import { useSelector,useDispatch } from 'react-redux';
+import {setuserId} from '../redux/user';
+const SignIn = ({allUsers}) => {  
   let navigate= useNavigate()
-  let endpoint=''
+  // let dispatch=useDispatch()
+  let endpoint='https://yalbble-app.herokuapp.com/auth/signin'
   const [loading, setloading] = useState(false)
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
@@ -16,22 +18,22 @@ const SignIn = ({allUsers}) => {
   
 
   const signin=()=>{
-    // setloading(true);
-  //   let user = {email,password}
-  //  axios.post(endpoint,user).then((res)=>{
-  //   setloading(false)
-  //   console.log(res)
-  //   setmessage(res.data.message)
-  //   let userId=res.data.user_id
-  //   console.log(userId)
-  //   if(res.data.status==true){
-  //     settoken(res.data.token)
-  //     let tokenStorage = JSON.stringify(token)
-  //     navigate('/home', {state:{userId:userId }})
-  //   }else{
-  //     console.log('not successful')
-  //   }
-  //  })
+    setmessage('')
+    setloading(true);
+    let user = {email,password}
+   axios.post(endpoint,user).then((res)=>{
+    setloading(false)
+    console.log(res)
+    setmessage(res.data.message)
+    localStorage.userId= JSON.stringify(res.data.user_id)
+    if(res.data.status==true){
+      // settoken(res.data.token)
+      // let tokenStorage = JSON.stringify(token)
+      navigate('/home')
+    }else{
+      console.log('not successful')
+    }
+   })
 }
   return (
     <>

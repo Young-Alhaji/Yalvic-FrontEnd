@@ -11,37 +11,38 @@ const SignUp = () => {
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
   let navigate = useNavigate();
-  let endpoint = "";
-  let endpoint2 = "";
+  let endpoint = "https://yalbble-app.herokuapp.com/auth/signup";
+  let endpoint2 = "https://yalbble-app.herokuapp.com/auth/email";
   let formik = useFormik({
     initialValues: {
-      fname: "",
+      fullname: "",
       username: "",
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-      // setloading(true);
-      // axios
-      //   .post(endpoint, values)
-      //   .then((res) => {
-      //     setloading(false);
-      //     setmessage(res.data.message);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //   });
-      // if (res.data.status == true) {
-      //   axios
-      //   .post(endpoint2, values)
-      //   navigate("/signin");
-      // } else {
-      //   console.log("not successful");
-      // }
+      setmessage('')
+      setloading(true);
+      axios
+        .post(endpoint, values)
+        .then((res) => {
+          console.log(res);
+          setloading(false);
+          setmessage(res.data.message);
+          if (res.data.status == true) {
+            axios.post(endpoint2, values);
+            navigate("/signin");
+          } else {
+            console.log("not successful");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
 
     validationSchema: yup.object({
-      fname: yup.string().required("This field is required!"),
+      fullname: yup.string().required("This field is required!"),
       username: yup.string().required("This field is required!"),
       email: yup
         .string()
@@ -73,12 +74,12 @@ const SignUp = () => {
               className={styles.input}
               type="text"
               placeholder="Name"
-              name="fname"
+              name="fullname"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            {formik.touched.fname ? (
-              <div className={styles.requiredtext}>{formik.errors.fname}</div>
+            {formik.touched.fullname ? (
+              <div className={styles.requiredtext}>{formik.errors.fullname}</div>
             ) : (
               ""
             )}
@@ -86,7 +87,7 @@ const SignUp = () => {
             <input
               className={styles.input}
               type="text"
-              placeholder="Username"
+              placeholder="username"
               name="username"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -127,7 +128,8 @@ const SignUp = () => {
               </div>
             ) : (
               ""
-            )} <br />
+            )}{" "}
+            <br />
             {loading ? (
               <div class="d-flex justify-content-center">
                 <div class="spinner-border text-primary" role="status">
