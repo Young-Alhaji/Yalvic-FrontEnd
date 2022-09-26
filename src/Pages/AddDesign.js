@@ -42,7 +42,7 @@ const AddDesign = () => {
         <SecondTop/>
         <center>
           <div style={{ fontSize: "180%" }}>
-           Add Designs
+           Add Design
             <br />
           </div>
         </center>
@@ -55,7 +55,7 @@ const AddDesign = () => {
         <input type="file" name="" placeholder="Design Image" class="form-control my-4" onChange={(e)=>getFile(e)}/>
         <input type="text" name="" placeholder="Category" class="form-control my-4" onChange={(e)=>setcategory(e)}/>
         <input type="text" name="" placeholder="Design Tag/Name" class="form-control my-4" onChange={(e)=>settag(e)}/>
-        <textarea type="text" name="" placeholder="Description" class="form-control my-4" onChange={(e)=>setdescription(e)}></textarea> <br />
+        <textarea type="text" name="" placeholder="README......Not mandatory" class="form-control my-4" onChange={(e)=>setdescription(e)}></textarea> <br />
         {loading ? (
               <div class="d-flex justify-content-center">
                 <div class="spinner-border text-primary" role="status">
