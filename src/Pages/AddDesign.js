@@ -53,9 +53,9 @@ const AddDesign = () => {
       <div class="col-9 mx-auto shadow">
         <div className={styles.input}>
         <input type="file" name="" placeholder="Design Image" class="form-control my-4" onChange={(e)=>getFile(e)}/>
-        <input type="text" name="" placeholder="Category" class="form-control my-4" onChange={(e)=>setcategory(e)}/>
-        <input type="text" name="" placeholder="Design Tag/Name" class="form-control my-4" onChange={(e)=>settag(e)}/>
-        <textarea type="text" name="" placeholder="README......Not mandatory" class="form-control my-4" onChange={(e)=>setdescription(e)}></textarea> <br />
+        <input type="text" name="" placeholder="Category" class="form-control my-4" onChange={(e)=>setcategory(e.target.value)}/>
+        <input type="text" name="" placeholder="Design Tag/Name" class="form-control my-4" onChange={(e)=>settag(e.target.value)}/>
+        <textarea type="text" name="" placeholder="README......Not mandatory" class="form-control my-4" onChange={(e)=>setdescription(e.target.value)}></textarea> <br />
         {loading ? (
               <div class="d-flex justify-content-center">
                 <div class="spinner-border text-primary" role="status">
