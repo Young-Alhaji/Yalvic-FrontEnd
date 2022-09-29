@@ -19,6 +19,7 @@ const SignUp = () => {
       username: "",
       email: "",
       password: "",
+      profilePicture: ""
     },
     onSubmit: (values) => {
       setmessage('')

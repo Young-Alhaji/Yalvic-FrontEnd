@@ -1,67 +1,12 @@
-.body {
-  color: antiquewhite;
-  margin-top: -45px;
-}
-.mainbox {
-  background-color: rgb(192, 2, 135);
-  border: 2px solid rgb(192, 2, 135);
-  height: auto;
-  width: 45%;
-  padding: 10px;
-  border-radius: 15px;
-  font-weight: bold;
-}
-.display {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.firstside {
-  width: 50%;
-  text-align: left;
-}
-.secondside {
-  width: 50%;
-  text-align: right;
-}
-.button1 {
-  color: rgb(192, 2, 135);
-  border: 1px solid rgb(192, 2, 135);
-  background-color: black;
-  border-radius: 6px;
-  width: 56%;
-  padding: 2px;
-}
-.amount {
+.heading{
   font-size: 180%;
-}
-.favorite {
-  color: rgb(192, 2, 135);
-  font-size: 110%;
   font-weight: bold;
-}
-.seconddiv {
-  margin-top: 100px;
-}
-.bigbutton {
-  height: 120px;
-  color: antiquewhite;
-  background-color: #080710;
-  border: none;
-  font-weight: bold;
-  margin-left: 7%;
-}
-.bigbutton:hover {
-  color: rgb(192, 2, 135);
-}
-.hi {
-  font-weight: bold;
-  font-size: 140%;
+  text-align: center;
 }
 .card {
-  width: 230px;
+  width: 450px;
   border: 1px solid rgb(192, 2, 135);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px;
   height: auto;
   background: white;
@@ -71,6 +16,17 @@
   margin: 10px;
   margin-bottom: 15px;
   transition: width 0.3s, height 0.3s;
+  box-shadow: 0 0 20px black;
+}
+.addbutton{
+  background-color: rgb(255, 6, 151);
+  width: 100%;
+  color: #f1f1f1;
+  border-radius: 8px;
+}
+.addbutton:hover{
+  background-color: black;
+  color: #f1f1f1;
 }
 
 .card:hover {
@@ -80,63 +36,56 @@
 .mapdisplay {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .img {
   width: 100%;
-  height: 150px;
-  border-radius: 10px;
+  height: 250px;
+  border-radius: 20px;
 }
 .detailsbutton{
   color: rgb(192, 2, 135);
   background-color: white;
   border: none;
+  font-weight: bolder;
  }
+ .pinkcolor{
+  color: deeppink;
+  font-weight: bolder;
+ }
+ .modaltext{
+  color: deeppink;
+  background-color: black;
+  font-size: 120%;
+  font-family: sans-serif;
+  position: fixed;
+  top: 10%;
+  width: 50%;
+  left: 25%;
+  margin: auto;
+  text-align: center;
+  z-index: 3;
+  border-radius: 10px;
+  border: 2px solid deeppink;
+ }
+ 
 
 
 
-
-
-
-
-@media screen and (max-width: 1140px) {
-  .mainbox {
-    background-color: rgb(192, 2, 135);
-    border: 2px solid rgb(192, 2, 135);
-    height: auto;
-    width: 95%;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  .seconddiv {
-    margin-top: 50px;
-  }
-}
 
 @media screen and (max-width: 700px) {
-  .button1 {
-    color: rgb(192, 2, 135);
-    border: 1px solid rgb(192, 2, 135);
-    background-color: black;
-    border-radius: 6px;
-    width: 60%;
-    padding: 1px;
-  }
-  .bigbutton {
-    height: 120px;
-    color: antiquewhite;
-    background-color: #080710;
-    border: none;
-    font-weight: bold;
-    margin-left: 2%;
-  }
   .card {
-    width: 150px;
+    width: 85%;
     border: 2px solid rgb(192, 2, 135);
     margin: 5px;
     margin-bottom: 15px;
     background: white;
     font-size: 80%;
+    box-shadow: 0 0 15px black;
+  }
+  .img {
+    height: 200px;
   }
 }
