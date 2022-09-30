@@ -41,10 +41,16 @@
 }
 
 .img {
-  width: 100%;
+  max-width: 100%;
   height: 250px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
+.modalimg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 .detailsbutton{
   color: rgb(192, 2, 135);
   background-color: white;
@@ -87,5 +93,9 @@
   }
   .img {
     height: 200px;
+  }
+  .modalimg {
+    height: 230px;
+    border-radius: 10px;
   }
 }
