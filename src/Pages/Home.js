@@ -116,6 +116,7 @@ const Home = () => {
                             type="button"
                             class="btn btn-primary w-75"
                             data-dismiss="modal"
+                            onClick={() => add(detailIndex)}
                           >
                             Add to Viewlist
                           </button>{" "}
