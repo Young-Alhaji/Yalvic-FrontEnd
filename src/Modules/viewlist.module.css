@@ -1,50 +1,101 @@
+.heading{
+  font-size: 180%;
+  font-weight: bold;
+  text-align: center;
+}
 .card {
-    width: 230px;
-    border: 1px solid rgb(192, 2, 135);
-    border-radius: 10px;
-    padding: 10px;
-    height: auto;
-    background: white;
-    text-align: center;
-    font-size: 90%;
-    font-weight: bolder;
-    margin: 10px;
+  width: 450px;
+  border: 1px solid rgb(192, 2, 135);
+  border-radius: 20px;
+  padding: 10px;
+  height: auto;
+  background: white;
+  text-align: center;
+  font-size: 90%;
+  font-weight: bolder;
+  margin: 10px;
+  margin-bottom: 15px;
+  transition: width 0.3s, height 0.3s;
+  box-shadow: 0 0 20px black;
+}
+.addbutton{
+  background-color: rgb(255, 6, 151);
+  width: 100%;
+  color: #f1f1f1;
+  border-radius: 8px;
+}
+.addbutton:hover{
+  background-color: black;
+  color: #f1f1f1;
+}
+
+.card:hover {
+  background-color: silver;
+}
+
+.mapdisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.img {
+  max-width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+.modalimg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.detailsbutton{
+  color: rgb(192, 2, 135);
+  background-color: white;
+  border: none;
+  font-weight: bolder;
+ }
+ .pinkcolor{
+  color: deeppink;
+  font-weight: bolder;
+ }
+ .modaltext{
+  color: deeppink;
+  background-color: black;
+  font-size: 120%;
+  font-family: sans-serif;
+  position: fixed;
+  top: 10%;
+  width: 50%;
+  left: 25%;
+  margin: auto;
+  text-align: center;
+  z-index: 30000000;
+  border-radius: 10px;
+  border: 2px solid deeppink;
+ }
+ 
+
+
+
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 85%;
+    border: 2px solid rgb(192, 2, 135);
+    margin: 5px;
     margin-bottom: 15px;
-    transition: width 0.3s, height 0.3s;
+    background: white;
+    font-size: 80%;
+    box-shadow: 0 0 15px black;
   }
-  
-  .card:hover {
-    background-color: silver;
-  }
-  
-  .mapdisplay {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  
   .img {
-    width: 100%;
-    height: 150px;
+    height: 200px;
+  }
+  .modalimg {
+    height: 230px;
     border-radius: 10px;
   }
-  .detailsbutton{
-    color: rgb(192, 2, 135);
-    background-color: white;
-    border: none;
-   }
-
-
-  
-  
-  @media screen and (max-width: 700px) {
-    .card {
-      width: 150px;
-      border: 2px solid rgb(192, 2, 135);
-      margin: 5px;
-      margin-bottom: 15px;
-      background: white;
-      font-size: 80%;
-    }
-  }
-  
+}

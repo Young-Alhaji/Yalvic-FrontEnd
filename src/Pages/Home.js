@@ -16,7 +16,7 @@ const Home = () => {
   const [addedIndex, setaddedIndex] = useState([]);
   const [detailIndex, setdetailIndex] = useState(0);
   let endpoint = "https://yalbble-app.herokuapp.com/fileuload/home";
-  let endpoint2 = "";
+  let endpoint2 ="https://yalbble-app.herokuapp.com/viewlists/addviewlist";
   let navigate = useNavigate();
   useEffect(() => {
     setmessage("");
@@ -29,8 +29,9 @@ const Home = () => {
   }, []);
 
   const add = (index) => {
-    let filteredArray = eachDesign.filter((item, ind) => index == ind);
+    let filteredArray = eachDesign.find((item, ind) => index == ind);
     setaddedIndex(filteredArray);
+    console.log(filteredArray)
     axios.post(endpoint2, filteredArray).then((res) => {
       setmessage(res.data.message);
       setTimeout(function () {
@@ -115,7 +116,6 @@ const Home = () => {
                           <button
                             type="button"
                             class="btn btn-primary w-75"
-                            data-dismiss="modal"
                             onClick={() => add(detailIndex)}
                           >
                             Add to Viewlist
