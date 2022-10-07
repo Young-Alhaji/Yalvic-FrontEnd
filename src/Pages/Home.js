@@ -17,6 +17,7 @@ const Home = () => {
   const [detailIndex, setdetailIndex] = useState(0);
   let endpoint = "https://yalbble-app.herokuapp.com/fileuload/home";
   let endpoint2 ="https://yalbble-app.herokuapp.com/viewlists/addviewlist";
+  let currentuser = JSON.parse(localStorage.userId)
   let navigate = useNavigate();
   useEffect(() => {
     setmessage("");
@@ -30,7 +31,7 @@ const Home = () => {
 
   const add = (index) => {
     let filteredArray = eachDesign.find((item, ind) => index == ind);
-    setaddedIndex(filteredArray);
+    filteredArray.currentuser= currentuser
     console.log(filteredArray)
     axios.post(endpoint2, filteredArray).then((res) => {
       setmessage(res.data.message);

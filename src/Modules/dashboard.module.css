@@ -8,33 +8,34 @@
 .box {
   border: 3px solid rgb(255, 6, 151);
   width: 40%;
-  height: 220px;
+  height: 210px;
   margin: 5px;
   padding: 10px;
   font-size: 220%;
   font-weight: bold;
   font-family: monospace;
   border-radius: 15px;
-  margin-top: 60px;
-  font-family: 'Poppins', sans-serif;
+  margin-top: 50px;
+  font-family: "Poppins", sans-serif;
 }
-.box:hover{
-background-color: rgb(255, 6, 151);
-color: #f1f1f1;
+.box:hover {
+  background-color: rgb(255, 6, 151);
+  color: #f1f1f1;
 }
-.hi{
-    text-align: center;
-    font-size: 180%;
+.hi {
+  text-align: center;
+  font-size: 180%;
 }
-.allbox{
-    width: 100%;
-    height: 100%;
+.allbox {
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 840px) {
   .box {
     padding: 5px;
     font-size: 140%;
-    margin-top: 20px;
+    margin-top: 15px;
+    height: 200px;
   }
 }

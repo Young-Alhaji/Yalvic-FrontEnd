@@ -8,15 +8,19 @@ import axios from "axios";
 const Viewlist = () => {
   let endpoint = "https://yalbble-app.herokuapp.com/viewlists/getviewlists";
   let endpoint2 = ""
+  let userId = JSON.parse(localStorage.userId)
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
   const [eachDesign, seteachDesign] = useState([]);
+
 
   useEffect(() => {
     setmessage("");
     setloading(true);
     let userId = JSON.parse(localStorage.userId)
-    axios.post(endpoint,userId).then((res) => {
+    let user={userId}
+    console.log(user)
+    axios.post(endpoint,user).then((res) => {
       setloading(false);
       seteachDesign(res.data.result);
       console.log(res);
@@ -25,7 +29,9 @@ const Viewlist = () => {
 
 
   const remove = (index) => {
-    let filteredArray = eachDesign.filter((item, ind) => index == ind);
+    let filteredArray = eachDesign.find((item, ind) => index == ind);
+    filteredArray.currentuser= userId
+    console.log(filteredArray)
     axios.post(endpoint2, filteredArray).then((res) => {
       setmessage(res.data.message);
       setTimeout(function () {
