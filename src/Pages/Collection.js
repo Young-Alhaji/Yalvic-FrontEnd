@@ -1,60 +1,61 @@
-import axios from 'axios';
+import axios from "axios";
 import { useState, useEffect } from "react";
-import React from 'react'
-import Navbar from '../Components/Navbar'
-import SecondTop from '../Components/SecondTop'
-import ThirdTop from '../Components/ThirdTop'
+import React from "react";
+import Navbar from "../Components/Navbar";
+import SecondTop from "../Components/SecondTop";
+import ThirdTop from "../Components/ThirdTop";
 import styles from "../Modules/collection.module.css";
 const Collection = () => {
-  let userId = JSON.parse(localStorage.userId)
+  let userId = JSON.parse(localStorage.userId);
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
   const [eachDesign, seteachDesign] = useState([]);
   const [addedIndex, setaddedIndex] = useState([]);
   const [detailIndex, setdetailIndex] = useState(0);
-  let endpoint='https://yalbble-app.herokuapp.com/fileuload/collectionspage'
-  let endpoint2='https://yalbble-app.herokuapp.com/fileuload/deletecollection'
+  let endpoint = "https://yalbble-app.herokuapp.com/fileuload/collectionspage";
+  let endpoint2 ="https://yalbble-app.herokuapp.com/fileuload/deletecollection";
 
   useEffect(() => {
+    loadDesigns();
+  }, []);
+
+  const loadDesigns = () => {
     setmessage("");
     setloading(true);
-    let user ={userId}
-    axios.post(endpoint,user).then((res)=>{
-      console.log(res)
+    let user = { userId };
+    axios.post(endpoint, user).then((res) => {
+      console.log(res);
       setloading(false);
       seteachDesign(res.data.result);
-    })
-  }, [])
-
+    });
+  };
 
   const remove = (index) => {
     let filteredArray = eachDesign.find((item, ind) => index == ind);
-    filteredArray.currentuser= userId
-    console.log(filteredArray)
+    console.log(filteredArray);
     axios.post(endpoint2, filteredArray).then((res) => {
       setmessage(res.data.message);
       setTimeout(function () {
         setmessage("");
       }, 2000);
     });
+    loadDesigns();
   };
 
   const detail = (index) => {
     setdetailIndex(index);
   };
-  
+
   return (
     <>
-     {message !== "" ? <div className={styles.modaltext}>{message}</div> : ""}
-    <Navbar/>
-    <SecondTop colColor='text-white'/>
-    <center>
-      <div className={styles.heading}>
-      My Collection
-      </div>
-    </center>
-    <ThirdTop/>
-    <div className={styles.mapdisplay}>
+      {message !== "" ? <div className={styles.modaltext}>{message}</div> : ""}
+      <Navbar />
+      <SecondTop colColor="text-white" />
+      <center>
+        <div className={styles.heading}>My Collection</div>
+      </center>
+      <ThirdTop />
+      <div className={styles.mapdisplay}>
         {loading ? (
           <div class="d-flex justify-content-center">
             <div class="spinner-border text-primary" role="status">
@@ -98,7 +99,10 @@ const Collection = () => {
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabel">
                             <div>
-                            <span className={styles.pinkcolor}>{eachDesign[detailIndex].category}</span> <br />
+                              <span className={styles.pinkcolor}>
+                                {eachDesign[detailIndex].category}
+                              </span>{" "}
+                              <br />
                               {eachDesign[detailIndex].tag}
                             </div>
                           </h5>
@@ -112,7 +116,13 @@ const Collection = () => {
                           </button>
                         </div>
                         <div class="modal-body">
-                          <img className={styles.modalimg} src={eachDesign[detailIndex].file} alt="" /> <br /> <br /><br />
+                          <img
+                            className={styles.modalimg}
+                            src={eachDesign[detailIndex].file}
+                            alt=""
+                          />{" "}
+                          <br /> <br />
+                          <br />
                           {eachDesign[detailIndex].description}
                         </div>
                         <div class="modal-footer">
@@ -123,7 +133,6 @@ const Collection = () => {
                           >
                             Remove
                           </button>{" "}
-                          
                           <button
                             type="button"
                             class="btn btn-secondary"
@@ -141,9 +150,8 @@ const Collection = () => {
             .reverse()
         )}
       </div>
-
     </>
-  )
-}
+  );
+};
 
-export default Collection
+export default Collection;

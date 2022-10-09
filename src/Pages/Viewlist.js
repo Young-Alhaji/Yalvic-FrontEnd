@@ -7,37 +7,40 @@ import styles from "../Modules/viewlist.module.css";
 import axios from "axios";
 const Viewlist = () => {
   let endpoint = "https://yalbble-app.herokuapp.com/viewlists/getviewlists";
-  let endpoint2 = "https://yalbble-app.herokuapp.com/viewlists/deleteviewslist"
-  let userId = JSON.parse(localStorage.userId)
+  let endpoint2 = "https://yalbble-app.herokuapp.com/viewlists/deleteviewslist";
+  let userId = JSON.parse(localStorage.userId);
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
   const [eachDesign, seteachDesign] = useState([]);
 
-
   useEffect(() => {
+    loadDesigns();
+  }, []);
+
+  const loadDesigns = () => {
     setmessage("");
     setloading(true);
-    let userId = JSON.parse(localStorage.userId)
-    let user={userId}
-    console.log(user)
-    axios.post(endpoint,user).then((res) => {
+    let userId = JSON.parse(localStorage.userId);
+    let user = { userId };
+    console.log(user);
+    axios.post(endpoint, user).then((res) => {
       setloading(false);
       seteachDesign(res.data.result);
       console.log(res);
     });
-  }, []);
-
+  };
 
   const remove = (index) => {
     let filteredArray = eachDesign.find((item, ind) => index == ind);
-    filteredArray.currentuser= userId
-    console.log(filteredArray)
+    filteredArray.currentuser = userId;
+    console.log(filteredArray);
     axios.post(endpoint2, filteredArray).then((res) => {
       setmessage(res.data.message);
       setTimeout(function () {
         setmessage("");
       }, 2000);
     });
+    loadDesigns();
   };
 
   return (
@@ -64,15 +67,13 @@ const Viewlist = () => {
               <div>{item.category}</div>
               <div className={styles.pinkcolor}>{item.tag}</div>
               <div>
+                <button className={styles.detailsbutton}>Details</button> <br />
                 <button
-                  className={styles.detailsbutton}
+                  className={styles.addbutton}
+                  onClick={() => remove(index)}
                 >
-                  Details
-                </button>{" "}
-                <br />
-                <button className={styles.addbutton}
-                 onClick={() => remove(index)}
-                >Remove</button>
+                  Remove
+                </button>
               </div>
             </div>
           ))
