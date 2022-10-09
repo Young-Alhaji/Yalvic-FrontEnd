@@ -7,7 +7,7 @@ import styles from "../Modules/viewlist.module.css";
 import axios from "axios";
 const Viewlist = () => {
   let endpoint = "https://yalbble-app.herokuapp.com/viewlists/getviewlists";
-  let endpoint2 = ""
+  let endpoint2 = "https://yalbble-app.herokuapp.com/viewlists/deleteviewslist"
   let userId = JSON.parse(localStorage.userId)
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
