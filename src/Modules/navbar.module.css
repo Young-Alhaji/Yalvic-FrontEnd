@@ -27,7 +27,8 @@
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 50px;
+  font-weight: bolder;
   margin-left: 50px;
   color: #f1f1f1;
   cursor: pointer;

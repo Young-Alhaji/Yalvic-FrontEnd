@@ -130,6 +130,7 @@ const Collection = () => {
                             type="button"
                             class="btn btn-primary w-75"
                             onClick={() => remove(detailIndex)}
+                            data-dismiss="modal"
                           >
                             Remove
                           </button>{" "}

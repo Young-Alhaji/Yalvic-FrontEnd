@@ -26,6 +26,9 @@ const AddDesign = () => {
   }
 
   const add=()=>{
+    if(!category || !tag || !description ){
+      setmessage('Input all necessary fields')
+    }else{
     setmessage('')
     setloading(true);
     let addedDesign={file,category,tag,description,userId}
@@ -38,6 +41,7 @@ const AddDesign = () => {
     setcategory('')
     settag('')
     setdescription('')
+  }
   }
   return (
     <>
@@ -59,7 +63,7 @@ const AddDesign = () => {
         <input type="file" name="" placeholder="Design Image" class="form-control my-4" onChange={(e)=>getFile(e)}/>
         <input type="text" name="" placeholder="Category" value={category} class="form-control my-4" onChange={(e)=>setcategory(e.target.value)}/>
         <input type="text" name="" placeholder="Design Tag/Name" value={tag} class="form-control my-4" onChange={(e)=>settag(e.target.value)}/>
-        <textarea type="text" name="" placeholder="README......Not mandatory" value={description} class="form-control my-4" onChange={(e)=>setdescription(e.target.value)}></textarea> 
+        <textarea type="text" name="" placeholder="README......" value={description} class="form-control my-4" onChange={(e)=>setdescription(e.target.value)}></textarea> 
         {loading ? (
               <div class="d-flex justify-content-center">
                 <div class="spinner-border text-primary" role="status">
