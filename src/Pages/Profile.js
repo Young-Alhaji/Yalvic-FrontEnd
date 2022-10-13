@@ -9,10 +9,12 @@ import axios from "axios";
 
 const Profile = () => {
   let endpoint = "https://yalbble-app.herokuapp.com/auth/profilepage";
+  let endpoint2 ='https://yalbble-app.herokuapp.com/auth/profileUpdate'
   let userId = JSON.parse(localStorage.userId);
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
   const [file, setfile] = useState("");
+  const [details, setdetails] = useState('')
 
   const getFile = (e) => {
     const myFile = e.target.files[0];
@@ -20,6 +22,7 @@ const Profile = () => {
     reader.readAsDataURL(myFile);
     reader.onload = () => {
       setfile(reader.result);
+      console.log(file)
     };
   };
 
@@ -28,14 +31,30 @@ const Profile = () => {
   }, []);
 
   const loadPage = () => {
-    setmessage("");
     setloading(true);
     let user = { userId };
     axios.post(endpoint, user).then((res) => {
       console.log(res);
       setloading(false);
+      setdetails(res.data.result)
     });
+    setTimeout(function () {
+      setmessage("");
+    }, 3000);
   };
+
+
+  const update =()=>{
+    setmessage("");
+    setloading(true);
+    let user ={userId,file}
+    axios.post(endpoint2,user).then((res)=>{
+      console.log(res);
+      setloading(false);
+      setmessage(res.data.message)
+      loadPage()
+    })
+  }
   return (
     <>
       <Navbar />
@@ -51,6 +70,11 @@ const Profile = () => {
           </div>
         ) : (
             <center>
+              {message !== "" ? (
+              <div className={styles.requiredtext}>{message}</div>
+            ) : (
+              ""
+            )}
         <div className={styles.body}>
           <div className={styles.picturediv}>
             <div>
@@ -60,7 +84,7 @@ const Profile = () => {
               ></i>
             </div>
             <div>
-              <img className={styles.image} src="" />
+              <img className={styles.image} src={details.profilePicture} />
             </div>
             <button
               className={styles.edit}
@@ -73,17 +97,17 @@ const Profile = () => {
           <br />
           <div className={styles.cover}>
             <label className={styles.label}>Username:</label>
-            <p className={styles.p}>{}</p>
+            <p className={styles.p}>{details.username}</p>
           </div>
           <br />
           <div className={styles.cover}>
             <label className={styles.label}>Name:</label>
-            <p className={styles.p}>{}</p>
+            <p className={styles.p}>{details.fullname}</p>
           </div>
           <br />
           <div className={styles.cover}>
             <label className={styles.label}>Email:</label>
-            <p className={styles.p}>{}</p>
+            <p className={styles.p}>{details.email}</p>
           </div>
           <br />
         </div>
@@ -119,13 +143,15 @@ const Profile = () => {
                 type="file"
                 class="form-control my-4"
                 onChange={(e) => getFile(e)}
-              />
+              /> <br />
+            
             </div>
             <div class="modal-footer">
               <button
                 type="button"
                 class="btn btn-primary "
                 data-dismiss="modal"
+                onClick={update}
               >
                 Update
               </button>{" "}
