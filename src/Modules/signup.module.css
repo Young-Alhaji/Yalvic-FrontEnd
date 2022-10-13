@@ -108,6 +108,10 @@
   font-family: sans-serif;
   font-weight: bold;
 }
+.navlinkcolor {
+  color: white;
+  text-decoration: underline;
+}
 .requiredtext {
   color: red;
   background-color: black;

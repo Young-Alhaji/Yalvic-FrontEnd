@@ -4,20 +4,25 @@ import { Link } from 'react-router-dom';
 import styles from '../Modules/signin.module.css';
 import { useNavigate } from "react-router"
 import axios from 'axios';
-// import { useSelector,useDispatch } from 'react-redux';
-import {setuserId} from '../redux/user';
-const SignIn = ({allUsers}) => {  
+import { useSelector,useDispatch } from 'react-redux';
+import {setusername,setprofilePicture,settoken} from '../redux/user';
+const SignIn = () => {  
   let navigate= useNavigate()
-  // let dispatch=useDispatch()
+  let dispatch=useDispatch()
   let endpoint='https://yalbble-app.herokuapp.com/auth/signin'
   const [loading, setloading] = useState(false)
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
   const [message, setmessage] = useState('')
-  // const [token, settoken] = useState('')
+  let username = useSelector(state=>state.user.username)
+  let profilePicture = useSelector(state=>state.user.profilePicture)
+  let token = useSelector(state=>state.user.token)
+  localStorage.username= JSON.stringify(username)
+  localStorage.profilePicture= JSON.stringify(profilePicture)
+  localStorage.token= JSON.stringify(token)
   
 
-  const signin=()=>{
+  const signin= ()=>{
     setmessage('')
     setloading(true);
     let user = {email,password}
@@ -26,10 +31,12 @@ const SignIn = ({allUsers}) => {
     console.log(res)
     setmessage(res.data.message)
     localStorage.userId= JSON.stringify(res.data.user_id)
+   dispatch(setusername(res.data.username))
+   dispatch(setprofilePicture(res.data.profilePicture))
+   dispatch(settoken(res.data.token))
+    console.log(username)
     if(res.data.status==true){
-      // settoken(res.data.token)
-      // let tokenStorage = JSON.stringify(token)
-      navigate('/home')
+    navigate('/home')
     }else{
       console.log('not successful')
     }
@@ -64,11 +71,7 @@ const SignIn = ({allUsers}) => {
             <button  className={styles.button} onClick={signin}>Sign In</button> <br/> <br/>
             <div></div>
             <div className={styles.center}> 
-            <Link to='/signup' className={styles.whitecolor}>Don't have an account yet?</Link>
-            </div>
-            <div className={styles.social}>
-            <div className={styles.go}><i className="fab fa-google"></i>  Google</div>
-            <div className={styles.fb}><i className="fab fa-facebook"></i>  Facebook</div>
+            <Link to='/signup' className={styles.navlinkcolor}>Don't have an account yet?</Link>
             </div>
             </div>
         </div>
@@ -76,4 +79,4 @@ const SignIn = ({allUsers}) => {
   )
 }
 
-export default SignIn
+export default SignIn;

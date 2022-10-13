@@ -156,17 +156,9 @@ const SignUp = () => {
           </form>
           <br />
           <div className={styles.center}>
-            <Link to="/signin" className={styles.whitecolor}>
+            <Link to="/signin" className={styles.navlinkcolor}>
               Already have an account?
             </Link>
-          </div>
-          <div className={styles.social}>
-            <div className={styles.go}>
-              <i className="fab fa-google"></i> Google
-            </div>
-            <div className={styles.fb}>
-              <i className="fab fa-facebook"></i> Facebook
-            </div>
           </div>
         </div>
         <br />

@@ -10,6 +10,8 @@ import axios from "axios";
 const AddDesign = () => {
   let endpoint='https://yalbble-app.herokuapp.com/fileuload'
   let userId = JSON.parse(localStorage.userId)
+  let username =JSON.parse(localStorage.username)
+  let profilePicture =JSON.parse(localStorage.profilePicture)
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
   const [file, setfile] = useState('')
@@ -31,7 +33,7 @@ const AddDesign = () => {
     }else{
     setmessage('')
     setloading(true);
-    let addedDesign={file,category,tag,description,userId}
+    let addedDesign={file,category,tag,description,userId,username,profilePicture}
     axios.post(endpoint,addedDesign).then((res)=>{
       console.log(res)
       setmessage(res.data.message);
