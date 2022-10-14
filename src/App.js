@@ -17,11 +17,11 @@ function App() {
     
     <>
       <Routes>
-      <Route path="/" element={<SignUp />}/>
+      <Route path="/" element={<SignIn/>}/>
         <Route path="/profile" element={<Profile />}/>
-        <Route path="/signin" element={<SignIn />}/>
+        <Route path="/signup" element={<SignUp />}/>
         <Route path="/home" element={<Home />}/>
-        <Route path="/signup" element={<Navigate to='/'/>}/>
+        <Route path="/signin" element={<Navigate to='/'/>}/>
         <Route path="/add" element= {<AddDesign/>}/>
         <Route path="/collection" element= {<Collection/>}/>
         <Route path="/dashboard" element= {<Dashboard/>}/>

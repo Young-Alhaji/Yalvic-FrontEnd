@@ -16,8 +16,8 @@ const Home = () => {
   const [addedIndex, setaddedIndex] = useState([]);
   const [detailIndex, setdetailIndex] = useState(0);
   let endpoint = "https://yalbble-app.herokuapp.com/fileuload/home";
-  let endpoint2 ="https://yalbble-app.herokuapp.com/viewlists/addviewlist";
-  let currentuser = JSON.parse(localStorage.userId)
+  let endpoint2 = "https://yalbble-app.herokuapp.com/viewlists/addviewlist";
+  let currentuser = JSON.parse(localStorage.userId);
   let navigate = useNavigate();
   useEffect(() => {
     setmessage("");
@@ -31,8 +31,8 @@ const Home = () => {
 
   const add = (index) => {
     let filteredArray = eachDesign.find((item, ind) => index == ind);
-    filteredArray.currentuser= currentuser
-    console.log(filteredArray)
+    filteredArray.currentuser = currentuser;
+    console.log(filteredArray);
     axios.post(endpoint2, filteredArray).then((res) => {
       setmessage(res.data.message);
       setTimeout(function () {
@@ -69,6 +69,17 @@ const Home = () => {
                 <div>{item.category}</div>
                 <div className={styles.pinkcolor}>{item.tag}</div>
                 <div>
+                  <span>
+                    <img
+                      className={styles.lilimg}
+                      src={item.profilePicture}
+                      alt=""
+                    />
+                  </span>{" "}
+                  &nbsp;
+                  <span>{item.username}</span>
+                </div>
+                <div>
                   <button
                     data-toggle="modal"
                     data-target="#exampleModal"
@@ -84,6 +95,7 @@ const Home = () => {
                   >
                     Add to Viewlist
                   </button>
+                  {/* modal */}
                   <div
                     class="modal fade"
                     id="exampleModal"
@@ -96,8 +108,22 @@ const Home = () => {
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabel">
                             <div>
-                            <span className={styles.pinkcolor}>{eachDesign[detailIndex].category}</span> <br />
-                              {eachDesign[detailIndex].tag}
+                              <span className={styles.pinkcolor}>
+                                {eachDesign[detailIndex].category}
+                              </span>{" "}
+                              <br />
+                              {eachDesign[detailIndex].tag} <br />
+                              <span>
+                                <img
+                                  className={styles.lilimg}
+                                  src={eachDesign[detailIndex].profilePicture}
+                                  alt=""
+                                />
+                              </span>{" "}
+                              &nbsp;
+                              <span className={styles.pinkcolor}>
+                                {eachDesign[detailIndex].username}
+                              </span>
                             </div>
                           </h5>
                           <button
@@ -110,9 +136,29 @@ const Home = () => {
                           </button>
                         </div>
                         <div class="modal-body">
-                          <img className={styles.modalimg} src={eachDesign[detailIndex].file} alt="" /> <br /> <br /><br />
+                          <img
+                            className={styles.modalimg}
+                            src={eachDesign[detailIndex].file}
+                            alt=""
+                          />{" "}
+                          <br /> <br />
+                          <br />
                           {eachDesign[detailIndex].description}
                         </div>
+                        <div>
+                          <span>
+                            <img
+                              className={styles.footerimg}
+                              src={eachDesign[detailIndex].profilePicture}
+                              alt=""
+                            />
+                          </span>{" "}
+                          <br /> <br />
+                          <span  className={styles.footerusername}>{eachDesign[detailIndex].username}</span>
+                        </div> <br />
+                        <div >
+                        <a className={styles.mail} href={"mailto:" + eachDesign[detailIndex].email}><span><i class="fa-solid fa-envelope"></i></span>Hire Me</a>
+                        </div> <br />
                         <div class="modal-footer">
                           <button
                             type="button"
@@ -121,7 +167,6 @@ const Home = () => {
                           >
                             Add to Viewlist
                           </button>{" "}
-                          
                           <button
                             type="button"
                             class="btn btn-secondary"

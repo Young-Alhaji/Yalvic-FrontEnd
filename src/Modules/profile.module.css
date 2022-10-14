@@ -41,7 +41,7 @@
 }
 .edit {
   position: absolute;
-  z-index: 10;
+  z-index: 5;
   bottom: 6%;
   right: 20%;
   font-size: 190%;

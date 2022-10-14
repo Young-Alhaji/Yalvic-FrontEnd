@@ -31,6 +31,7 @@ const SignIn = () => {
     console.log(res)
     setmessage(res.data.message)
     localStorage.userId= JSON.stringify(res.data.user_id)
+    localStorage.email= JSON.stringify(res.data.email)
    dispatch(setusername(res.data.username))
    dispatch(setprofilePicture(res.data.profilePicture))
    dispatch(settoken(res.data.token))

@@ -45,6 +45,21 @@
   height: 250px;
   border-radius: 10px;
 }
+.lilimg{
+  border-radius: 1000px;
+  height: 40px;
+  width: 40px;
+}
+.footerimg{
+  border-radius: 1000px;
+  height: 90px;
+  width: 90px;
+  margin: auto;
+}
+.footerusername{
+  font-weight: bolder;
+  font-size: 120%;
+}
 .modalimg {
   max-width: 100%;
   height: auto;
@@ -76,6 +91,13 @@
   border-radius: 10px;
   border: 2px solid deeppink;
  }
+ .mail{
+  color: white;
+  font-weight: bold;
+  background-color: deeppink;
+  padding: 10px;
+  border-radius: 10px;
+ }
  
 
 
@@ -97,5 +119,11 @@
   .modalimg {
     height: 230px;
     border-radius: 10px;
+  }
+  .footerimg{
+    border-radius: 1000px;
+    height: 70px;
+    width: 70px;
+    margin: auto;
   }
 }

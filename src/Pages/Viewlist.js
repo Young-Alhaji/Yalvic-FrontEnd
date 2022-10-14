@@ -6,6 +6,14 @@ import ThirdTop from "../Components/ThirdTop";
 import styles from "../Modules/viewlist.module.css";
 import axios from "axios";
 const Viewlist = () => {
+
+  const styleNoReg={
+    fontWeight: "bold",
+    color: 'deeppink',
+    fontSize: '150%',
+    textAlign: 'center',
+}
+
   let endpoint = "https://yalbble-app.herokuapp.com/viewlists/getviewlists";
   let endpoint2 = "https://yalbble-app.herokuapp.com/viewlists/deleteviewslist";
   let currentuser = JSON.parse(localStorage.userId);
@@ -55,6 +63,7 @@ const Viewlist = () => {
       <FirstTop viewcolor="text-white" />
       <div className={styles.heading}>My Viewlist</div>
       <ThirdTop />
+      
       <div className={styles.mapdisplay}>
         {loading ? (
           <div class="d-flex justify-content-center">
@@ -62,7 +71,10 @@ const Viewlist = () => {
               <span class="sr-only">Loading...</span>
             </div>
           </div>
-        ) : (
+        ) :
+        (eachDesign.length==0? <div style={styleNoReg}> You currently have no designs in your Viewlist Page</div>:
+
+         (
           eachDesign
             .map((item, index) => (
               <div key={item._id} className={styles.card}>
@@ -87,6 +99,9 @@ const Viewlist = () => {
                   >
                     Remove
                   </button>
+                  {/* modal */}
+
+
                   <div
                     class="modal fade"
                     id="exampleModal"
@@ -103,7 +118,18 @@ const Viewlist = () => {
                                 {eachDesign[detailIndex].category}
                               </span>{" "}
                               <br />
-                              {eachDesign[detailIndex].tag}
+                              {eachDesign[detailIndex].tag} <br />
+                              <span>
+                                <img
+                                  className={styles.lilimg}
+                                  src={eachDesign[detailIndex].profilePicture}
+                                  alt=""
+                                />
+                              </span>{" "}
+                              &nbsp;
+                              <span className={styles.pinkcolor}>
+                                {eachDesign[detailIndex].username}
+                              </span>
                             </div>
                           </h5>
                           <button
@@ -125,6 +151,21 @@ const Viewlist = () => {
                           <br />
                           {eachDesign[detailIndex].description}
                         </div>
+                        <div>
+                          <span>
+                            <img
+                              className={styles.footerimg}
+                              src={eachDesign[detailIndex].profilePicture}
+                              alt=""
+                            />
+                          </span>{" "}
+                          <br /> <br />
+                          <span  className={styles.footerusername}>{eachDesign[detailIndex].username}</span>
+                        </div>
+                        <br />
+                        <div >
+                        <a className={styles.mail} href={"mailto:" + eachDesign[detailIndex].email}><span><i class="fa-solid fa-envelope"></i></span>Hire Me</a>
+                        </div> <br />
                         <div class="modal-footer">
                           <button
                             type="button"
@@ -149,7 +190,7 @@ const Viewlist = () => {
               </div>
             ))
             .reverse()
-        )}
+        ))}
       </div>
     </>
   );

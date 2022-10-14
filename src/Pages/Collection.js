@@ -6,6 +6,13 @@ import SecondTop from "../Components/SecondTop";
 import ThirdTop from "../Components/ThirdTop";
 import styles from "../Modules/collection.module.css";
 const Collection = () => {
+
+  const styleNoReg={
+    fontWeight: "bold",
+    color: 'deeppink',
+    fontSize: '150%',
+    textAlign: 'center',
+}
   let userId = JSON.parse(localStorage.userId);
   const [message, setmessage] = useState("");
   const [loading, setloading] = useState(false);
@@ -62,7 +69,9 @@ const Collection = () => {
               <span class="sr-only">Loading...</span>
             </div>
           </div>
-        ) : (
+        ) :
+        (eachDesign.length==0? <div style={styleNoReg}> You do not have any personal designs in your Collection</div>:
+         (
           eachDesign
             .map((item, index) => (
               <div key={item._id} className={styles.card}>
@@ -149,7 +158,7 @@ const Collection = () => {
               </div>
             ))
             .reverse()
-        )}
+        ))}
       </div>
     </>
   );
