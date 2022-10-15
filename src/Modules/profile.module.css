@@ -75,4 +75,9 @@
     height: 190px;
     width: 190px;
   }
+  .cover {
+    border: 2px solid rgb(192, 2, 135);
+    width: 85%;
+    border-radius: 10px;
+  }
 }

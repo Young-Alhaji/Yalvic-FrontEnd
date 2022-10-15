@@ -29,7 +29,6 @@ const Dashboard = () => {
         <div className={styles.hi}>Dashboard</div>
         <ThirdTop />
       </div>
-      <div className={styles.hi}>Hi,</div>
       <div>
         <div className={styles.display}>
           <button className={styles.box} 
