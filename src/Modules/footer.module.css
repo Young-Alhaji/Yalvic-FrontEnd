@@ -20,6 +20,7 @@
 .ul{
     list-style-type: none;
     display: flex;
+    justify-content: space-evenly;
 }
 .circledradius1{
   border-radius: 1000px;
@@ -32,7 +33,6 @@
     width: 80px;
     height: 80px;
     border: 2px solid deeppink;
-    margin-left: 20px;
 }
 .circledradius:hover{
     border: 2px solid white;
