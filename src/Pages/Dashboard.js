@@ -6,6 +6,7 @@ import ThirdTop from "../Components/ThirdTop";
 import styles from "../Modules/dashboard.module.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Components/Footer";
 
 const Dashboard = () => {
   let navigate = useNavigate()
@@ -61,7 +62,8 @@ const Dashboard = () => {
             ></i>
           </button>
         </div>
-      </div>
+      </div> <br /><br />
+      <Footer/>
     </>
   );
 };

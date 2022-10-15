@@ -6,6 +6,7 @@ import styles from "../Modules/add.module.css";
 import SecondTop from "../Components/SecondTop";
 import { useState } from "react";
 import axios from "axios";
+import Footer from "../Components/Footer";
 
 const AddDesign = () => {
   let endpoint='https://yalbble-app.herokuapp.com/fileuload'
@@ -86,7 +87,8 @@ const AddDesign = () => {
         <div></div>
       </div>
     </div>
-      </center>
+      </center><br /><br /><br /> 
+      <Footer/>
     </>
   );
 };

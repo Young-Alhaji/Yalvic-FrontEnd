@@ -5,6 +5,7 @@ import Navbar from "../Components/Navbar";
 import SecondTop from "../Components/SecondTop";
 import ThirdTop from "../Components/ThirdTop";
 import styles from "../Modules/collection.module.css";
+import Footer from "../Components/Footer";
 const Collection = () => {
 
   const styleNoReg={
@@ -64,13 +65,13 @@ const Collection = () => {
       <ThirdTop />
       <div className={styles.mapdisplay}>
         {loading ? (
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center"><br /><br /><br /><br /><br /> <br /><br />
             <div class="spinner-border text-primary" role="status">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
         ) :
-        (eachDesign.length==0? <div style={styleNoReg}> You do not have any personal designs in your Collection</div>:
+        (eachDesign.length==0? <div style={styleNoReg}> You do not have any personal designs in your Collection<br /><br /><br /><br /> <br /><br /></div>:
          (
           eachDesign
             .map((item, index) => (
@@ -159,6 +160,9 @@ const Collection = () => {
             ))
             .reverse()
         ))}
+      </div>
+      <div className={styles.footermargin}>
+        <Footer/>
       </div>
     </>
   );

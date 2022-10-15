@@ -5,6 +5,7 @@ import Navbar from "../Components/Navbar";
 import ThirdTop from "../Components/ThirdTop";
 import styles from "../Modules/viewlist.module.css";
 import axios from "axios";
+import Footer from "../Components/Footer";
 const Viewlist = () => {
 
   const styleNoReg={
@@ -66,13 +67,13 @@ const Viewlist = () => {
       
       <div className={styles.mapdisplay}>
         {loading ? (
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center"> <br /><br /><br /><br /><br /> <br /><br />
             <div class="spinner-border text-primary" role="status">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
         ) :
-        (eachDesign.length==0? <div style={styleNoReg}> You currently have no designs in your Viewlist Page</div>:
+        (eachDesign.length==0? <div style={styleNoReg}> You currently have no designs in your Viewlist Page <br /> <br /><br /><br /><br /><br /></div>:
 
          (
           eachDesign
@@ -191,6 +192,9 @@ const Viewlist = () => {
             ))
             .reverse()
         ))}
+      </div>
+      <div className={styles.footermargin}>
+        <Footer/>
       </div>
     </>
   );

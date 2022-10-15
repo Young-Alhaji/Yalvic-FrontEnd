@@ -8,6 +8,7 @@ import FirstTop from "../Components/FirstTop";
 import ThirdTop from "../Components/ThirdTop";
 import { useEffect } from "react";
 import axios from "axios";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   const [message, setmessage] = useState("");
@@ -54,10 +55,10 @@ const Home = () => {
       <ThirdTop />
       <div className={styles.mapdisplay}>
         {loading ? (
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center">  <br /> <br /> <br /> <br /> <br /> <br /> <br /><br /> <br /> <br /> <br />
             <div class="spinner-border text-primary" role="status">
               <span class="sr-only">Loading...</span>
-            </div>
+            </div> 
           </div>
         ) : (
           eachDesign
@@ -183,7 +184,8 @@ const Home = () => {
             ))
             .reverse()
         )}
-      </div>
+      </div> <br /><br /><br />
+      <Footer/>
     </>
   );
 };

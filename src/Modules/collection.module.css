@@ -76,6 +76,9 @@
   border-radius: 10px;
   border: 2px solid deeppink;
  }
+ .footermargin{
+  margin-top: 185px;
+ }
  
 
 
@@ -98,4 +101,12 @@
     height: 230px;
     border-radius: 10px;
   }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .footermargin{
+    margin-top: 80px;
+   }
 }

@@ -98,6 +98,9 @@
   padding: 10px;
   border-radius: 10px;
  }
+ .footermargin{
+  margin-top: 185px;
+ }
  
 
 
@@ -126,4 +129,11 @@
     width: 70px;
     margin: auto;
   }
+}
+
+
+@media screen and (max-width: 450px) {
+  .footermargin{
+    margin-top: 80px;
+   }
 }
