@@ -11,7 +11,7 @@ const Footer = () => {
             <div>
                 <p className={styles.p}>Contact Us</p>
                 <ul className={styles.ul}>
-                <li className={styles.circledradius}><a href="mailto:adesunkanmi123@gmail.com"><span ><i style={{fontSize: '300%',marginTop: '13px',color: 'white'}} class="fa-solid fa-envelope"></i></span></a></li>
+                <li className={styles.circledradius1}><a href="mailto:adesunkanmi123@gmail.com"><span ><i style={{fontSize: '300%',marginTop: '13px',color: 'white'}} class="fa-solid fa-envelope"></i></span></a></li>
                 <li className={styles.circledradius}><a href="https://wa.me/+2347019486904"><span><i style={{fontSize: '300%',marginTop: '13px',color: 'white'}} class="fa-brands fa-whatsapp"></i></span></a></li>
                 <li className={styles.circledradius}><a href="https://www.linkedin.com/in/ridwan-oguntola-7344b117b/"><span><i style={{fontSize: '300%',marginTop: '13px',color: 'white'}} class="fa-brands fa-linkedin"></i></span></a></li>
                 </ul>

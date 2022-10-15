@@ -21,14 +21,18 @@
     list-style-type: none;
     display: flex;
 }
-.ul li{
-    margin-left: 20px;
+.circledradius1{
+  border-radius: 1000px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid deeppink;
 }
 .circledradius{
     border-radius: 1000px;
     width: 80px;
     height: 80px;
     border: 2px solid deeppink;
+    margin-left: 20px;
 }
 .circledradius:hover{
     border: 2px solid white;
