@@ -34,7 +34,8 @@ const Profile = () => {
     setloading(true);
     let user = { userId };
     axios.post(endpoint, user).then((res) => {
-      console.log(res);
+      console.log(res.data.result.profilePicture);
+      localStorage.profilePicture= JSON.stringify(res.data.result.profilePicture)
       setloading(false);
       setdetails(res.data.result)
     });

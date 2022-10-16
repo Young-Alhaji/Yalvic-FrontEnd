@@ -19,7 +19,7 @@ const SignUp = () => {
       username: "",
       email: "",
       password: "",
-      profilePicture: ""
+      profilePicture: "https://res.cloudinary.com/avanin/image/upload/v1665921157/hp4dathecvhllazrhrdz.png"
     },
     onSubmit: (values) => {
       setmessage('')
@@ -88,7 +88,7 @@ const SignUp = () => {
             <input
               className={styles.input}
               type="text"
-              placeholder="username"
+              placeholder="Username"
               name="username"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
